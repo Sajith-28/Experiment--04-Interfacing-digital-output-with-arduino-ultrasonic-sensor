@@ -54,14 +54,78 @@ speed of sound in the air at 20ºC (68ºF) = 343m/s
 10.	Plot the graph for the output voltage vs the resistance 
 
 
+
 ### PROGRAM 
+```
+int echopin=6;
+int trigpin=7;
+int red=9;
+int green=8;
+long duration;
+float distance;
+void setup()
+{
+  pinMode(echopin,INPUT);
+  pinMode(trigpin,OUTPUT);
+  pinMode(red,OUTPUT);
+  pinMode(green,OUTPUT);
+  Serial.begin(9600);
+}
+
+void loop()
+{
+  digitalWrite(trigpin,LOW);
+  delay(10); // Wait for 1000 millisecond(s)
+  digitalWrite(trigpin,HIGH);
+  delay(10); // Wait for 1000 millisecond(s)
+  digitalWrite(trigpin,LOW);
+  duration=pulseIn(echopin,HIGH);
+  distance=duration*0.034/2;
+  Serial.print("Distance=");
+  Serial.print(distance);
+  Serial.println("cms");
+  if(distance>50)
+  {
+    digitalWrite(green,HIGH);
+    delay(500);
+    digitalWrite(green,LOW);
+    delay(500);
+  }
+  else
+  {
+    digitalWrite(red,HIGH);
+     delay(500);
+    digitalWrite(red,LOW);
+    delay(500);
+  }
+}
+```
+
+
+
+
+### OUTPUT:
+GREEN:
+![GREEN](https://github.com/Sajith-28/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/149937471/f0d2b125-3e7a-4d4c-83cd-a3b699fc8219)
+
+RED:
+![RED](https://github.com/Sajith-28/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/149937471/211b3a3d-c7e4-4a59-8079-e2640b38d6c5)
+
+### DISTANCE VS MEASUREMENT TABLE:
+![EXCEL](https://github.com/Sajith-28/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/149937471/f1a3e628-e203-4e6a-8341-2d69f6786d2c)
+
+GRAPH:
+![GRAPH](https://github.com/Sajith-28/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/149937471/94f0a611-696a-48d6-8dbf-2ba0d8217565)
+
+
+### SCHEMATIC VIEW:
+
+![SCHEMATIC](https://github.com/Sajith-28/Experiment--04-Interfacing-digital-output-with-arduino-ultrasonic-sensor/assets/149937471/043a94f7-31d4-40ea-8ec7-9ebcee62f8da)
 
 
 
 
 
-
-### Distance vs measurement table 
 
 			
  
@@ -70,6 +134,9 @@ speed of sound in the air at 20ºC (68ºF) = 343m/s
 			
 
 ![image](https://user-images.githubusercontent.com/36288975/190135379-52ebacd5-ccd5-460f-a4cd-4d0ad1d9b179.png)
+
+### RESULT:
+Thus the distance value is measured in "CM" using ultrasonic sensor.
 
 			
 			
