@@ -1,4 +1,9 @@
-# EXPERIMENT-NO--05-Distance measurement using Ultrasonic sensor
+# EXPERIMENT-NO--04-Distance measurement using Ultrasonic sensor
+ ###  DATE: 08/03/24
+
+###  NAME: SAJITH AHAMED F
+###  ROLL NO : 212223240144
+###  DEPARTMENT: AIML
 
 ## AIM: 
 To interface an ultrasonic pair and measure the distance in centimeters , calculate the error
@@ -143,7 +148,9 @@ Thus the distance value is measured in "CM" using ultrasonic sensor.
 			
 			
 			
-			Average error = sum/ number of readings 
+			Average error = sum/ number of readings =0.5=0.7=0.4=0.8=1.0
+			   =3.4/5
+                               =0.68
  
 
 
@@ -153,7 +160,7 @@ Thus the distance value is measured in "CM" using ultrasonic sensor.
 
 
 
-### RESULTS
+
 
 
 
